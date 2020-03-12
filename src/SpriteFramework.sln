@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprite.AspNetCore", "Service\Sprite.AspNetCore\Sprite.AspNetCore.csproj", "{3BA638B0-A0E2-405A-97EB-CAA3A25D86BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprite.Common", "Service\Sprite.Common\Sprite.Common.csproj", "{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BA638B0-A0E2-405A-97EB-CAA3A25D86BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA638B0-A0E2-405A-97EB-CAA3A25D86BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA638B0-A0E2-405A-97EB-CAA3A25D86BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA638B0-A0E2-405A-97EB-CAA3A25D86BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBBF469F-27A8-4F1F-BD8E-AB398B76ED85}
+	EndGlobalSection
+EndGlobal
