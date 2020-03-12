@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sprite.Common.Finder
 {
-    public interface IFinder<TItem>
+    public interface IFinder<out TItem>
     {
         /// <summary>
         /// 查找指定条件的项目
