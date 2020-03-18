@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Sprite.Common.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,6 +27,24 @@ namespace Sprite.Common.Dependency
             }
 
             return services;
+        }
+
+        private static void AddServices(IServiceCollection services, Type implementationType)
+        {
+            if (implementationType.IsAbstract || implementationType.IsInterface)
+                return;
+
+
+        }
+
+
+        private static ServiceLifetime? GetLiftTimeOrNull(Type type)
+        {
+            DependencyAttribute dependencyAttribute = type.GetAttribute<DependencyAttribute>();
+            if (dependencyAttribute != null)
+                return dependencyAttribute.Lifetime;
+
+            return null;
         }
     }
 }
