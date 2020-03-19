@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprite.AspNetCore", "Service\Sprite.AspNetCore\Sprite.AspNetCore.csproj", "{3BA638B0-A0E2-405A-97EB-CAA3A25D86BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprite.AspNetCore", "Service\Sprite.AspNetCore\Sprite.AspNetCore.csproj", "{3BA638B0-A0E2-405A-97EB-CAA3A25D86BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprite.Common", "Service\Sprite.Common\Sprite.Common.csproj", "{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprite.Common", "Service\Sprite.Common\Sprite.Common.csproj", "{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprite.EntityFrameWorkCore", "Service\Sprite.EntityFrameWorkCore\Sprite.EntityFrameWorkCore.csproj", "{2B3CBBA0-5934-498B-9179-7735636B427E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{4C240F44-8AFA-4674-8473-12E143084197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.EntityConfiguration", "Demo\Demo.EntityConfiguration\Demo.EntityConfiguration.csproj", "{859E4D96-82A2-4D21-810A-A94C36B969FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WebApi", "Demo\Demo.WebApi\Demo.WebApi.csproj", "{EA230B3D-6569-463E-87AD-10FB0A3F47FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.ModeCore", "Demo\Demo.ModeCore\Demo.ModeCore.csproj", "{56286FDF-D662-4838-9808-BFF899D4B4B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +31,30 @@ Global
 		{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B3CBBA0-5934-498B-9179-7735636B427E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3CBBA0-5934-498B-9179-7735636B427E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3CBBA0-5934-498B-9179-7735636B427E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3CBBA0-5934-498B-9179-7735636B427E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859E4D96-82A2-4D21-810A-A94C36B969FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859E4D96-82A2-4D21-810A-A94C36B969FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859E4D96-82A2-4D21-810A-A94C36B969FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859E4D96-82A2-4D21-810A-A94C36B969FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA230B3D-6569-463E-87AD-10FB0A3F47FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA230B3D-6569-463E-87AD-10FB0A3F47FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA230B3D-6569-463E-87AD-10FB0A3F47FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA230B3D-6569-463E-87AD-10FB0A3F47FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56286FDF-D662-4838-9808-BFF899D4B4B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56286FDF-D662-4838-9808-BFF899D4B4B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56286FDF-D662-4838-9808-BFF899D4B4B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56286FDF-D662-4838-9808-BFF899D4B4B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{859E4D96-82A2-4D21-810A-A94C36B969FA} = {4C240F44-8AFA-4674-8473-12E143084197}
+		{EA230B3D-6569-463E-87AD-10FB0A3F47FF} = {4C240F44-8AFA-4674-8473-12E143084197}
+		{56286FDF-D662-4838-9808-BFF899D4B4B3} = {4C240F44-8AFA-4674-8473-12E143084197}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBBF469F-27A8-4F1F-BD8E-AB398B76ED85}

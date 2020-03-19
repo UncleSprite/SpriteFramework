@@ -46,7 +46,7 @@ namespace Sprite.Common.Reflection
                 {
                     names = (from name in dllName
                              let i = name.LastIndexOf('/') + 1
-                             select name.Substring(i, name.Length - 1)).Distinct()
+                             select name.Substring(i, name.Length - i)).Distinct()
                              .WhereIf(name => !filters.Any(name.StartsWith), _filterNetAssembly)
                              .ToList();
                 }
