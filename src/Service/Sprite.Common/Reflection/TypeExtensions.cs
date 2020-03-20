@@ -40,12 +40,49 @@ namespace Sprite.Common.Reflection
         }
 
         /// <summary>
+        /// 判断当前类型是否能由指定类型派生
+        /// </summary>
+        /// <typeparam name="TBaseType"></typeparam>
+        /// <param name="type"></param>
+        /// <param name="canAbstract"></param>
+        /// <returns></returns>
+        public static bool IsDeriveClassFrom<TBaseType>(this Type type, bool canAbstract = false)
+        {
+            return type.IsDeriveClassFrom(typeof(TBaseType), canAbstract);
+        }
+
+        /// <summary>
+        /// 判断当前类型是否能由指定类型派生
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="baseType"></param>
+        /// <param name="canAbstract"></param>
+        /// <returns></returns>
+        public static bool IsDeriveClassFrom(this Type type, Type baseType, bool canAbstract = false)
+        {
+            type.CheckNotNull("type");
+            baseType.CheckNotNull("baseType");
+            return type.IsClass && ((!canAbstract && !type.IsAbstract) || canAbstract) && type.IsBaseOn(baseType);
+        }
+
+        /// <summary>
+        /// 返回当前类型是否能由指定基类派生
+        /// </summary>
+        /// <typeparam name="TBaseType"></typeparam>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static bool IsBaseOn<TBaseType>(this Type type)
+        {
+            return IsBaseOn(type, typeof(TBaseType));
+        }
+
+        /// <summary>
         /// 当前类型是否是指定基类的派生类
         /// </summary>
         /// <param name="type"></param>
         /// <param name="baseType"></param>
         /// <returns></returns>
-        public static bool IsBaseOn(Type type, Type baseType)
+        public static bool IsBaseOn(this Type type, Type baseType)
         {
             if (baseType.IsGenericTypeDefinition)
                 return baseType.IsGenericTypeAssignableFrom(type);

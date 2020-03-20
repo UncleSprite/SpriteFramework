@@ -24,26 +24,54 @@ namespace Sprite.Common.Dependency
             foreach (var denpendencyType in dependencyTypes)
             {
                 // 注册服务
+                AddToServices(services, denpendencyType);
             }
 
             return services;
         }
 
-        private static void AddServices(IServiceCollection services, Type implementationType)
+        private static void AddToServices(IServiceCollection services, Type implementationType)
         {
             if (implementationType.IsAbstract || implementationType.IsInterface)
                 return;
 
+            var lifeTime = GetLiftTimeOrNull(implementationType);
+            if (lifeTime == null)
+                return;
+
+            DependencyAttribute dependencyAttribute = implementationType.GetAttribute<DependencyAttribute>();
+
 
         }
 
-
+        /// <summary>
+        /// 从类型获取要注册的生命周期类型
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private static ServiceLifetime? GetLiftTimeOrNull(Type type)
         {
             DependencyAttribute dependencyAttribute = type.GetAttribute<DependencyAttribute>();
             if (dependencyAttribute != null)
                 return dependencyAttribute.Lifetime;
 
+            if (type.IsDeriveClassFrom<ITransientDependency>())
+                return ServiceLifetime.Transient;
+            else if (type.IsDeriveClassFrom<IScopeDependency>())
+                return ServiceLifetime.Scoped;
+            else if (type.IsDeriveClassFrom<ISingletonDependency>())
+                return ServiceLifetime.Singleton;
+
+            return null;
+        }
+
+        /// <summary>
+        /// 获取实现类型所有可注册服务接口
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        private static Type[] GetImplementedInterfaces(Type type)
+        {
             return null;
         }
     }
