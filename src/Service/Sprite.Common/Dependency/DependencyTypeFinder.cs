@@ -27,7 +27,7 @@ namespace Sprite.Common.Dependency
         {
             Type[] baseTypes = new[] { typeof(ISingletonDependency), typeof(IScopeDependency), typeof(ITransientDependency) };
             Type[] types = _allAssemblyFinder.FindAll(true).SelectMany(assembly => assembly.GetTypes())
-                .Where(type => type.IsClass && !type.IsAbstract && !type.IsInterface && type.HasAttribute<IgnoreDependencyAttribute>()
+                .Where(type => type.IsClass && !type.IsAbstract && !type.IsInterface && !type.HasAttribute<IgnoreDependencyAttribute>()
                 && (baseTypes.Any(t => t.IsAssignableFrom(type)) || type.HasAttribute<DependencyAttribute>()))
                 .ToArray();
 

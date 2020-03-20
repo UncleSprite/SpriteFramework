@@ -1,9 +1,15 @@
-﻿using System;
+﻿using Sprite.Common.Dependency;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Sprite.Common.Finder
 {
+    /// <summary>
+    /// 定义一个查找器
+    /// </summary>
+    /// <typeparam name="TItem">要查找的项类型</typeparam>
+    [IgnoreDependency]
     public interface IFinder<out TItem>
     {
         /// <summary>

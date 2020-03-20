@@ -25,6 +25,7 @@ namespace Demo.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             services.AddDependencyConfig();
 
             services.AddDbContext<DefaultDbContext>((provider, builder) =>
@@ -46,10 +47,7 @@ namespace Demo.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

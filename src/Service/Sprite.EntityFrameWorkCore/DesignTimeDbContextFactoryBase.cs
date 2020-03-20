@@ -13,7 +13,6 @@ namespace Sprite.EntityFrameWorkCore
     public abstract class DesignTimeDbContextFactoryBase<TDbContext> : IDesignTimeDbContextFactory<TDbContext>
     where TDbContext : DbContext
     {
-
         /// <summary>
         /// 创建一个数据上下文实例
         /// </summary>

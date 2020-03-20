@@ -66,7 +66,7 @@ namespace Demo.WebApi
         {
             string entryAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
             //return builder.UseSqlServer(connString, b => b.MigrationsAssembly(entryAssemblyName));
-            return builder.UseSqlServer(connString, b => b.MigrationsAssembly(entryAssemblyName));
+              return builder.UseSqlServer(connString, b => b.MigrationsAssembly(entryAssemblyName));
         }
     }
 }
