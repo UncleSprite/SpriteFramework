@@ -38,7 +38,7 @@ namespace Sprite.Common.Dependency
             where TServiceType : class
         {
             var serviceType = (TServiceType)services.FirstOrDefault(m => m.ServiceType == typeof(TServiceType) && m.Lifetime == ServiceLifetime.Singleton)?.ImplementationInstance;
-            if (services == null)
+            if (serviceType == null)
             {
                 serviceType = factory();
                 services.AddSingleton<TServiceType>(serviceType);

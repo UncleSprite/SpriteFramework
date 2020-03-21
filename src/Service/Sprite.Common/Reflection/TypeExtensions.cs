@@ -1,6 +1,7 @@
 ﻿using Sprite.Common.Extensions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -12,6 +13,57 @@ namespace Sprite.Common.Reflection
     /// </summary>
     public static class TypeExtensions
     {
+        /// <summary>
+        /// 判断类型是否为Nullable类型
+        /// </summary>
+        /// <param name="type">要处理的类型</param>
+        /// <returns>是返回True，不是返回False</returns>
+        public static bool IsNullableType(this Type type)
+        {
+            return ((type != null) && type.IsGenericType) && (type.GetGenericTypeDefinition() == typeof(Nullable<>));
+        }
+
+        /// <summary>
+        /// 通过类型转换器获取Nullable类型的基础类型
+        /// </summary>
+        /// <param name="type">要处理的基础对象</param>
+        /// <returns></returns>
+        public static Type GetUnNullableType(this Type type)
+        {
+            if (IsNullableType(type))
+            {
+                NullableConverter nullableConverter = new NullableConverter(type);
+                return nullableConverter.UnderlyingType;
+            }
+
+            return type;
+        }
+
+        /// <summary>
+        /// 判断当前类型是否可由指定类型派生
+        /// </summary>
+        /// <typeparam name="TBaseType"></typeparam>
+        /// <param name="type"></param>
+        /// <param name="canAbstract"></param>
+        /// <returns></returns>
+        public static bool IsDeriveClassFrom<TBaseType>(this Type type, bool canAbstract = false)
+        {
+            return IsDeriveClassFrom(type, typeof(TBaseType), canAbstract);
+        }
+
+        /// <summary>
+        /// 判断当前类型是否能由指派类型派生
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="baseType"></param>
+        /// <param name="canAbstract"></param>
+        /// <returns></returns>
+        public static bool IsDeriveClassFrom(this Type type, Type baseType, bool canAbstract = false)
+        {
+            type.CheckNotNull("type");
+            baseType.CheckNotNull("baseType");
+            return type.IsClass && ((!type.IsAbstract && !canAbstract) || canAbstract) && type.IsBaseOn(baseType);
+        }
         /// <summary>
         /// 检查指定指定类型成员中是否存在指定的Attribute特性
         /// </summary>
@@ -39,41 +91,16 @@ namespace Sprite.Common.Reflection
             return attributes.FirstOrDefault() as TAttribute;
         }
 
-        /// <summary>
-        /// 判断当前类型是否能由指定类型派生
-        /// </summary>
-        /// <typeparam name="TBaseType"></typeparam>
-        /// <param name="type"></param>
-        /// <param name="canAbstract"></param>
-        /// <returns></returns>
-        public static bool IsDeriveClassFrom<TBaseType>(this Type type, bool canAbstract = false)
-        {
-            return type.IsDeriveClassFrom(typeof(TBaseType), canAbstract);
-        }
 
         /// <summary>
-        /// 判断当前类型是否能由指定类型派生
+        /// 返回当前类型是否是指定基类的派生类
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="baseType"></param>
-        /// <param name="canAbstract"></param>
+        /// <typeparam name="TBaseType">要判断的基类型</typeparam>
+        /// <param name="type">当前类型</param>
         /// <returns></returns>
-        public static bool IsDeriveClassFrom(this Type type, Type baseType, bool canAbstract = false)
+        public static bool IsBaseOn<TBaseType>(this Type typee)
         {
-            type.CheckNotNull("type");
-            baseType.CheckNotNull("baseType");
-            return type.IsClass && ((!canAbstract && !type.IsAbstract) || canAbstract) && type.IsBaseOn(baseType);
-        }
-
-        /// <summary>
-        /// 返回当前类型是否能由指定基类派生
-        /// </summary>
-        /// <typeparam name="TBaseType"></typeparam>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public static bool IsBaseOn<TBaseType>(this Type type)
-        {
-            return IsBaseOn(type, typeof(TBaseType));
+            return typee.IsBaseOn(typeof(TBaseType));
         }
 
         /// <summary>
