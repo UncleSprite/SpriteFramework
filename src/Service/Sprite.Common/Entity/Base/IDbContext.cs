@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Sprite.EntityFrameWorkCore
+namespace Sprite.Common.Entity.Base
 {
     /// <summary>
     /// 定义数据库上下文接口
@@ -16,11 +16,12 @@ namespace Sprite.EntityFrameWorkCore
         /// </summary>
         /// <returns></returns>
         int SaveChanges();
+
         /// <summary>
-        /// 异步提交数据上下文的所有变更
+        /// 异步提交数据上下文所有变更
         /// </summary>
-        /// <param name="cancelToken"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        Task<int> SaveChangesAsync(CancellationToken cancelToken = default(CancellationToken));
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 }

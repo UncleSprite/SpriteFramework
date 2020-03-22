@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Sprite.Common.Entity;
+using Sprite.Common.Entity.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,12 @@ namespace Sprite.EntityFrameWorkCore
         {
             _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
         }
+
+
+        /// <summary>
+        /// 获取或设置 当前上下文所在工作单元，为null将使用EF自动事务而不启用手动事务
+        /// </summary>
+        public IUnitOfWork UnitOfWork { get; set; }
 
         /// <summary>
         /// 将此上下文中所作的所有更改，保存到数据库中
