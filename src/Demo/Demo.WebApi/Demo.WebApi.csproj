@@ -18,7 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Service\Sprite.EntityFrameWorkCore\Sprite.EntityFrameWorkCore.csproj" />
+    <ProjectReference Include="..\Demo.Core\Demo.Core.csproj" />
+
     <ProjectReference Include="..\Demo.EntityConfiguration\Demo.EntityConfiguration.csproj" />
+
     <ProjectReference Include="..\Demo.ModeCore\Demo.ModeCore.csproj" />
   </ItemGroup>
 

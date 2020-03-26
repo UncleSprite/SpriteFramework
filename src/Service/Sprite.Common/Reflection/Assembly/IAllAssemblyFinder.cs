@@ -9,5 +9,6 @@ namespace Sprite.Common.Reflection
     /// </summary>
     public interface IAllAssemblyFinder : IAssemblyFinder
     {
+
     }
 }

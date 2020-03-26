@@ -16,11 +16,7 @@ namespace Demo.EntityConfiguration.Order
 
             builder.Property(t => t.Name).HasMaxLength(32);
 
-            builder.HasData(new OrderItem
-            {
-                Id = 1,
-                Name = "1"
-            });
+            builder.Property(t => t.Price).HasColumnType("decimal(18, 2)");
         }
     }
 }

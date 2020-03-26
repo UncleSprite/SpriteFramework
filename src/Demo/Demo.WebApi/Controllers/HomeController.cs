@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Demo.WebApi.Controllers
 {
+
     public class HomeController : ControllerBase
     {
         private readonly DefaultDbContext _dbContextBase;
@@ -19,6 +20,7 @@ namespace Demo.WebApi.Controllers
 
         public IActionResult Index()
         {
+
             var data = _dbContextBase.Set<OrderItem>().ToList();
             return Ok(data);
         }
