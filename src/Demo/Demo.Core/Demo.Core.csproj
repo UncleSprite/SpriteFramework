@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="OrderContract\Dtos\" />
+    <Folder Include="OrderContract\Interface\" />
+    <Folder Include="OrderContract\Method\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Service\Sprite.Common\Sprite.Common.csproj" />
+  </ItemGroup>
+
+</Project>

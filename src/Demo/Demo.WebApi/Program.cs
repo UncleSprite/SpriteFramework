@@ -18,12 +18,7 @@ namespace Demo.WebApi
         {
             CreateWebHostBuilder(args).Build().Run();
         }
-
-<<<<<<< HEAD
-        public static IWebHostBuilder CreateHostBuilder(string[] args)
-=======
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
->>>>>>> 555ac816375452fa1c703c35e1dc31430af86d73
         {
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             IConfiguration configuration = new ConfigurationBuilder()
@@ -40,14 +35,8 @@ namespace Demo.WebApi
                 })
             .UseIISIntegration()
                     .UseKestrel()
-<<<<<<< HEAD
                     .UseUrls("http://*:53708")
                 .UseStartup<Startup>();
         }
-
-=======
-                                   .UseStartup<Startup>();
-        }
->>>>>>> 555ac816375452fa1c703c35e1dc31430af86d73
     }
 }

@@ -7,15 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprite.AspNetCore", "Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprite.Common", "Service\Sprite.Common\Sprite.Common.csproj", "{9F6A86F9-FBF1-46B3-A21B-80D69F4AA513}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprite.EntityFrameWorkCore", "Service\Sprite.EntityFrameWorkCore\Sprite.EntityFrameWorkCore.csproj", "{2B3CBBA0-5934-498B-9179-7735636B427E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprite.EntityFrameWorkCore", "Service\Sprite.EntityFrameWorkCore\Sprite.EntityFrameWorkCore.csproj", "{2B3CBBA0-5934-498B-9179-7735636B427E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{4C240F44-8AFA-4674-8473-12E143084197}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.EntityConfiguration", "Demo\Demo.EntityConfiguration\Demo.EntityConfiguration.csproj", "{859E4D96-82A2-4D21-810A-A94C36B969FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.EntityConfiguration", "Demo\Demo.EntityConfiguration\Demo.EntityConfiguration.csproj", "{859E4D96-82A2-4D21-810A-A94C36B969FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WebApi", "Demo\Demo.WebApi\Demo.WebApi.csproj", "{EA230B3D-6569-463E-87AD-10FB0A3F47FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.WebApi", "Demo\Demo.WebApi\Demo.WebApi.csproj", "{EA230B3D-6569-463E-87AD-10FB0A3F47FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.ModeCore", "Demo\Demo.ModeCore\Demo.ModeCore.csproj", "{56286FDF-D662-4838-9808-BFF899D4B4B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.ModeCore", "Demo\Demo.ModeCore\Demo.ModeCore.csproj", "{56286FDF-D662-4838-9808-BFF899D4B4B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Core", "Demo\Demo.Core\Demo.Core.csproj", "{BAB33EA5-6A80-497A-9A35-A8AE637491EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprite.AutoMapper", "Service\Sprite.AutoMapper\Sprite.AutoMapper.csproj", "{7A22AA73-A8A8-4653-B5EC-DB34E5F7964B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,14 @@ Global
 		{56286FDF-D662-4838-9808-BFF899D4B4B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56286FDF-D662-4838-9808-BFF899D4B4B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56286FDF-D662-4838-9808-BFF899D4B4B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB33EA5-6A80-497A-9A35-A8AE637491EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB33EA5-6A80-497A-9A35-A8AE637491EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB33EA5-6A80-497A-9A35-A8AE637491EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB33EA5-6A80-497A-9A35-A8AE637491EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A22AA73-A8A8-4653-B5EC-DB34E5F7964B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A22AA73-A8A8-4653-B5EC-DB34E5F7964B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A22AA73-A8A8-4653-B5EC-DB34E5F7964B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A22AA73-A8A8-4653-B5EC-DB34E5F7964B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +67,7 @@ Global
 		{859E4D96-82A2-4D21-810A-A94C36B969FA} = {4C240F44-8AFA-4674-8473-12E143084197}
 		{EA230B3D-6569-463E-87AD-10FB0A3F47FF} = {4C240F44-8AFA-4674-8473-12E143084197}
 		{56286FDF-D662-4838-9808-BFF899D4B4B3} = {4C240F44-8AFA-4674-8473-12E143084197}
+		{BAB33EA5-6A80-497A-9A35-A8AE637491EE} = {4C240F44-8AFA-4674-8473-12E143084197}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBBF469F-27A8-4F1F-BD8E-AB398B76ED85}
