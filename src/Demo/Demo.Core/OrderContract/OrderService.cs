@@ -1,10 +1,8 @@
-﻿using Demo.ModeCore.Order;
+using Demo.ModeCore.Order;
+using Microsoft.Extensions.DependencyInjection;
 using Sprite.Common.Dependency;
 using Sprite.Common.Entity;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Demo.Core.OrderContract
 {
@@ -13,6 +11,7 @@ namespace Demo.Core.OrderContract
     /// </summary>
     public partial class OrderService : IScopeDependency
     {
+
         readonly IServiceProvider _serviceProvider;
         readonly IRepository<Order, int> _orderRepository;
         readonly IRepository<OrderItem, int> _orderItemRepository;
@@ -22,6 +21,7 @@ namespace Demo.Core.OrderContract
 
             _orderItemRepository = _serviceProvider.GetService<IRepository<OrderItem, int>>();
             _orderRepository = _serviceProvider.GetService<IRepository<Order, int>>();
+
         }
     }
 }

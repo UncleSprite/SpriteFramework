@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 namespace Sprite.Common.Entity
 {
     public interface IRepository<TEntity, TKey>
-         where TEntity : class, IEntity<TKey>
-         where TKey : IEquatable<TKey>
+         where TEntity : IEntity<TKey>
     {
         /// <summary>
         /// 数据库上下文工作单元

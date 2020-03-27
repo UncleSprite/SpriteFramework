@@ -5,12 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <Folder Include="OrderContract\Dtos\" />
+    <Folder Include="OrderContract\Interface\" />
+    <Folder Include="OrderContract\Method\" />
+  </ItemGroup>
+
+  <ItemGroup>
+
     <PackageReference Include="AutoMapper" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Service\Sprite.Common\Sprite.Common.csproj" />
+
     <ProjectReference Include="..\Demo.ModeCore\Demo.ModeCore.csproj" />
+
   </ItemGroup>
 
 </Project>

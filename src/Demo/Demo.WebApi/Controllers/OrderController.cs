@@ -24,6 +24,12 @@ namespace Demo.WebApi.Controllers
             _query = query;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await _query.GetOrderById(1));
+        }
+
         /// <summary>
         /// 创建订单
         /// </summary>
