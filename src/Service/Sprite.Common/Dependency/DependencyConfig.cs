@@ -139,7 +139,7 @@ namespace Sprite.Common.Dependency
             for (int index = 0; index < interfaceTypes.Length; index++)
             {
                 Type interfaceType = interfaceTypes[index];
-                if (interfaceType.IsGenericType && !interfaceType.IsGenericTypeDefinition && interfaceType.FullName != null)
+                if (interfaceType.IsGenericType && !interfaceType.IsGenericTypeDefinition && interfaceType.FullName == null)
                 {
                     interfaceTypes[index] = interfaceType.GetGenericTypeDefinition();
                 }

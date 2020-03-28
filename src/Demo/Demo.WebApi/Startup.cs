@@ -34,6 +34,16 @@ namespace Demo.WebApi
                 builder.UseSqlServer(configuration.GetSection("ConnectionStrings:DefaultDatabase").Value);
                 //builder.UseMySql(configuration.GetSection("ConnectionStrings:DefaultDatabase").Value);
             });
+
+            // swagger 
+            services.AddSwaggerGen(options =>
+           {
+               options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+               {
+                   Title = "Demo api",
+                   Version = "v1"
+               });
+           });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -42,6 +52,15 @@ namespace Demo.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger(c =>
+            {
+                c.RouteTemplate = "swagger/{documentName}/swagger.json";
+            })
+                .UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "demo api");
+                });
 
             app.UseRouting();
 

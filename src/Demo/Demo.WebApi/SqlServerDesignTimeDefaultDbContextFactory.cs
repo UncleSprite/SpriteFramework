@@ -13,10 +13,8 @@ using System.Threading.Tasks;
 
 namespace Demo.WebApi
 {
-
     public class SqlServerDesignTimeDefaultDbContextFactory : DesignTimeDbContextFactoryBase<DefaultDbContext>
     {
-
         private readonly IServiceProvider _serviceProvider;
 
         public SqlServerDesignTimeDefaultDbContextFactory()
@@ -32,7 +30,7 @@ namespace Demo.WebApi
 
             services.AddSingleton<IAllAssemblyFinder, AppDomainAllAssemblyFinder>();
             services.AddSingleton<IEntityConfigurationTypeFinder, EntityConfigurationTypeFinder>();
-            
+
             _serviceProvider = services.BuildServiceProvider();
         }
 
@@ -62,7 +60,7 @@ namespace Demo.WebApi
         {
             string entryAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
             //return builder.UseSqlServer(connString, b => b.MigrationsAssembly(entryAssemblyName));
-              return builder.UseSqlServer(connString, b => b.MigrationsAssembly(entryAssemblyName));
+            return builder.UseSqlServer(connString, b => b.MigrationsAssembly(entryAssemblyName));
         }
     }
 }
