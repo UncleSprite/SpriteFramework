@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Service\Sprite.Common\Sprite.Common.csproj" />
     <ProjectReference Include="..\..\Service\Sprite.EntityFrameWorkCore\Sprite.EntityFrameWorkCore.csproj" />
+    <ProjectReference Include="..\Demo.Core\Demo.Core.csproj" />
 
     <ProjectReference Include="..\Demo.EntityConfiguration\Demo.EntityConfiguration.csproj" />
 

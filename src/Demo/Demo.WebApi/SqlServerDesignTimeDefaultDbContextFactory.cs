@@ -32,17 +32,13 @@ namespace Demo.WebApi
 
             services.AddSingleton<IAllAssemblyFinder, AppDomainAllAssemblyFinder>();
             services.AddSingleton<IEntityConfigurationTypeFinder, EntityConfigurationTypeFinder>();
-
-
+            
             _serviceProvider = services.BuildServiceProvider();
-
         }
+
         public SqlServerDesignTimeDefaultDbContextFactory(IServiceProvider serviceProvider)
         {
-
             _serviceProvider = serviceProvider;
-
-
         }
         public override string GetConnectionString()
         {
