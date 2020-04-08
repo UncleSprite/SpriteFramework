@@ -9,6 +9,8 @@
     <Folder Include="OrderContract\Dtos\" />
     <Folder Include="OrderContract\Interface\" />
     <Folder Include="OrderContract\Method\" />
+    <Folder Include="ProductContract\Dtos\" />
+    <Folder Include="ProductContract\Interface\" />
   </ItemGroup>
 
   <ItemGroup>

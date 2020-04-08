@@ -28,8 +28,9 @@ namespace Sprite.EntityFrameWorkCore
         /// <param name="builder"></param>
         public void RegisterTo(ModelBuilder builder)
         {
+          
             builder.ApplyConfiguration(this);
-
+          
             if (typeof(ISoftDeletable).IsAssignableFrom(typeof(TEntity)))
             {
                 builder.Entity<TEntity>().HasQueryFilter(m => !((ISoftDeletable)m).Deleted);

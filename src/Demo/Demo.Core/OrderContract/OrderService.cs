@@ -11,17 +11,25 @@ namespace Demo.Core.OrderContract
     /// </summary>
     public partial class OrderService : IScopeDependency
     {
+        //readonly IServiceProvider _serviceProvider;
+        private readonly IRepository<Order, int> _orderRepository;
+        private readonly IRepository<OrderItem, int> _orderItemRepository;
+        private readonly IRepository<Product, int> _productRepository;
 
-        readonly IServiceProvider _serviceProvider;
-        readonly IRepository<Order, int> _orderRepository;
-        readonly IRepository<OrderItem, int> _orderItemRepository;
-        public OrderService(IServiceProvider serviceProvider)
+        //public OrderService(IServiceProvider serviceProvider)
+        //{
+        //    //_serviceProvider = serviceProvider;
+
+        //    _orderItemRepository = _serviceProvider.GetService<IRepository<OrderItem, int>>();
+        //    _orderRepository = _serviceProvider.GetService<IRepository<Order, int>>();
+
+        //}
+
+        public OrderService(IRepository<Order, int> orderRepository, IRepository<OrderItem, int> orderItemRepository, IRepository<Product, int> productRepository)
         {
-            _serviceProvider = serviceProvider;
-
-            _orderItemRepository = _serviceProvider.GetService<IRepository<OrderItem, int>>();
-            _orderRepository = _serviceProvider.GetService<IRepository<Order, int>>();
-
+            _orderItemRepository = orderItemRepository;
+            _orderRepository = orderRepository;
+            _productRepository = productRepository;
         }
     }
 }

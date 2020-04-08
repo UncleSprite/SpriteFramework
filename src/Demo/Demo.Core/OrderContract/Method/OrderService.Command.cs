@@ -24,7 +24,14 @@ namespace Demo.Core.OrderContract
                 Price = 1
             };
 
-            await _orderRepository.InsertAsync(order);
+            var product = await _productRepository.GetAsync(1);
+            if (product != null)
+                product.Quantity -= 1;
+
+            await _productRepository.UnitOfWork.BeginOrUseTransactionAsync();
+
+            await _productRepository.UpdateAsync(product);
+            _productRepository.UnitOfWork.Commit();
         }
 
     }
